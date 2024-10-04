@@ -118,3 +118,22 @@ test ('validate values', async ({page}) => {
     const placeholeder = await emailField.getAttribute('placeholder')
     expect(placeholeder).toEqual('Email')
 })
+
+
+test ('assertions', async ({page}) => {
+    const basicFormButton = page.locator('nb-card').filter({hasText: "Basic form"}).locator('button')
+    // General seertions
+    const value = 5
+    expect(value).toEqual(5)
+
+    const text = await basicFormButton.textContent()
+    expect(text).toEqual('Submit')
+
+    // Locator assertion
+    await expect(basicFormButton).toHaveText('Submit')
+
+    //Soft assertion (test continues if test failed)
+    await expect.soft(basicFormButton).toHaveText("Submit")
+    await basicFormButton.click()
+
+})
