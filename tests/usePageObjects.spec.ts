@@ -3,7 +3,8 @@ import { timeout } from 'rxjs-compat/operator/timeout'
 import { NavigationPage } from './page.object/navigationPage'
 import { FormLayoutPage } from './page.object/formlayotsPage'
 import { DatePickerPage } from './page.object/datepickerPage'
-import { PageManager } from './page.object/pagemanager'
+import { PageManager } from './page.object/pageManager'
+
 
 test.beforeEach(async ({ page }) => {
   await page.goto('http://localhost:4200/')
