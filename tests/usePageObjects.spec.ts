@@ -21,7 +21,7 @@ test('navigate to form page @smoke @regression', async({page}) => {
 test('parametrized methods @smoke', async({page}) => {
     const pm = new PageManager(page)
     const randomFullName = faker.person.fullName()
-    const randomEmail = `${randomFullName.replace(' ', '')}${faker.number.int(1000)}@test.com`
+    const randomEmail = `${randomFullName.replace(' ', '')}${faker.number.int(500)}@test.com`
 
     await pm.navigateTo().formLayoutsPage()
     await pm.onFormLayoutsPage().submitUsingTheGrigdFormWithCredentialsAndSelectOption(process.env.USERNAME, process.env.PASSWORD, 'Option 2')
