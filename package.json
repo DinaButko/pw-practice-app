@@ -8,7 +8,11 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve"
+    "start": "ng serve",
+    "pageObjects-chrome": "npx playwright test usePageObjects.spec.ts --project=chromium",
+    "pageObjects-firefox": "npx playwright test usePageObjects.spec.ts --project=firefox",
+    "pageObjects-all": "npm run pageObjects-chrome && npm run pageObjects-firefox",
+    "autoWait-dev": "URL=http://uitestingplayground.com/ajax npx playwright test autoWaiting.spec.ts --project=chromium"
   },
   "dependencies": {
     "@angular/animations": "^14.2.12",
@@ -70,6 +74,9 @@
     "ts-node": "3.2.2",
     "tslint": "~6.1.0",
     "tslint-language-service": "^0.9.9",
-    "typescript": "~4.6.4"
+    "typescript": "~4.6.4",
+    "dotenv": "^16.3.1",
+    "@argos-ci/playwright": "^3.0.1",
+    "@faker-js/faker": "^8.0.2"
   }
 }
